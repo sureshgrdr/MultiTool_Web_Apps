@@ -1,0 +1,12 @@
+.errmsg {
+  font-size: 0.8rem;
+  color: red;
+  letter-spacing: 0.1rem;
+}
+
+.resHide {
+  visibility: hidden;
+}
+.resVisble {
+  visibility: visible;
+}
