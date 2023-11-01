@@ -1,6 +1,7 @@
 import Axios from "axios";
 import "./WeatherComp.css";
 import { useState } from "react";
+import { imgInfo } from "../Assets/Assets";
 
 function WeatherComp() {
   let [srch, setSrch] = useState("");
@@ -31,7 +32,7 @@ function WeatherComp() {
             image: res.data.weather[0].main,
           });
           setVisible("resVisble");
-          console.log(res);
+          // console.log(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -40,43 +41,62 @@ function WeatherComp() {
         });
     }
   };
-  //   console.log(srch);
-  console.log(data);
+
   return (
     <div>
-      <h1>Weather App</h1>
-      <div>
-        <span className='material-symbols-outlined'>location_on</span>
-        <input
-          type='text'
-          placeholder='City Name...'
-          onChange={(e) => {
-            setSrch(e.target.value);
-            setError("");
-          }}
-        />
-        <span className='material-symbols-outlined' onClick={handleSearch}>
-          search
-        </span>
-      </div>
-      <span className='errmsg'>{error}</span>
-      <div className={visble}>
-        <p>{name}</p>
-        <div>
-          <p>{temp}⁰C</p>
-          <p>⛅</p>
-          <p>{image}</p>
+      <div className='container'>
+        <h1>Weather App</h1>
+        <div className='searchBox'>
+          <span className='material-symbols-outlined'>location_on</span>
+          <input
+            type='text'
+            placeholder='City Name...'
+            onChange={(e) => {
+              setSrch(e.target.value);
+              setVisible("resHide");
+              setError("");
+            }}
+            onKeyDown={(e) => {
+              return e.key === "Enter" ? handleSearch() : "";
+            }}
+          />
+          <span className='material-symbols-outlined' onClick={handleSearch}>
+            search
+          </span>
         </div>
-        <div>
-          <div>
-            <span className='material-symbols-outlined'>water_drop</span>
-            <p>{humid}%</p>
-            <p>Humidity</p>
-          </div>
-          <div>
-            <span className='material-symbols-outlined'>air</span>
-            <p>{winspd}km/s</p>
-            <p>Wind Speed</p>
+        <span className='errmsg'>{error}</span>
+        <div className={visble}>
+          <h2>{name}</h2>
+          <p className='imgInfo'>{image}</p>
+          {imgInfo
+            .filter((itm) => {
+              return itm.name === image;
+            })
+            .map((item, i) => {
+              return (
+                <img
+                  src={item.imgpic}
+                  alt={image}
+                  className='mainImg'
+                  key={i}
+                  draggable='false'
+                />
+              );
+            })}
+
+          <p className='celcInfo '>{temp}°c</p>
+          <div className='otherInfo '>
+            <div>
+              <span className='material-symbols-outlined humid'>water_drop</span>
+              <p>{humid}%</p>
+              <p>Humidity</p>
+            </div>
+            <p>⁝</p>
+            <div>
+              <span className='material-symbols-outlined wind'>air</span>
+              <p>{winspd}km/s</p>
+              <p>Wind Speed</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,12 +1,131 @@
-.errmsg {
-  font-size: 0.8rem;
-  color: red;
-  letter-spacing: 0.1rem;
+.container {
+  max-width: 500px;
+  margin: 2% auto;
+  border-radius: 2rem;
+  padding: 2rem 4rem;
+  text-align: center;
+  background-color: rgba(245, 245, 245, 0.7);
+  filter: drop-shadow(rgba(38, 35, 82, 0.4) 0rem 1rem 10px);
+}
+h1 {
+  color: rgb(121, 113, 251);
+}
+h2 {
+  color: mediumseagreen;
+  margin-bottom: 1rem;
 }
 
+/* Search */
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 0.8rem;
+  border-radius: 1.8rem;
+  background-color: rgba(255, 255, 255);
+  filter: drop-shadow(rgba(38, 35, 82, 0.4) 0rem 0.2rem 3px);
+}
+.searchBox input {
+  color: gray;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+  /* background-color: rgba(245, 245, 245, 0.7); */
+}
+.searchBox span {
+  color: rgb(121, 113, 251);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.searchBox span:active {
+  transform: translateY(2px);
+}
+.errmsg {
+  font-size: 1.5rem;
+  color: rgb(214, 69, 69);
+  letter-spacing: 0.08rem;
+  transition: ease-in 1s;
+}
+
+/* Results Display */
 .resHide {
   visibility: hidden;
 }
 .resVisble {
   visibility: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  transition: ease 1s;
+}
+.imgInfo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(56, 53, 119);
+}
+
+.celcInfo {
+  font-size: 5rem;
+  color: rgb(121, 113, 251);
+}
+.mainImg {
+  width: 40%;
+  margin-top: 2rem;
+  filter: drop-shadow(rgba(38, 35, 82, 0.2) -1rem 1.2rem 15px);
+}
+.otherInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 1em;
+  padding: 0.8em 1.5em;
+  border-radius: 1.5em;
+  background-color: whitesmoke;
+}
+.otherInfo div {
+  padding: 0 15%;
+}
+.otherInfo > div > p {
+  font-weight: 600;
+  color: rgb(56, 53, 119);
+  /* font-size: 1rem; */
+}
+/* .otherInfo span {
+  font-size: 1.8rem;
+} */
+
+.humid {
+  color: rgb(59, 125, 248);
+}
+.wind {
+  color: goldenrod;
+}
+
+@media (max-width: 425px) {
+  .container {
+    max-width: 300px;
+    margin: 0 5%;
+  }
+  .otherInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
 }
