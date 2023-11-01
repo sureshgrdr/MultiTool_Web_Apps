@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MultiTool_Web_Apps/static/css/main.f07ea2fd.css",
-    "main.js": "/MultiTool_Web_Apps/static/js/main.fcabbb24.js",
+    "main.css": "/MultiTool_Web_Apps/static/css/main.643e00f6.css",
+    "main.js": "/MultiTool_Web_Apps/static/js/main.09308631.js",
     "index.html": "/MultiTool_Web_Apps/index.html",
-    "main.f07ea2fd.css.map": "/MultiTool_Web_Apps/static/css/main.f07ea2fd.css.map",
-    "main.fcabbb24.js.map": "/MultiTool_Web_Apps/static/js/main.fcabbb24.js.map"
+    "main.643e00f6.css.map": "/MultiTool_Web_Apps/static/css/main.643e00f6.css.map",
+    "main.09308631.js.map": "/MultiTool_Web_Apps/static/js/main.09308631.js.map"
   },
   "entrypoints": [
-    "static/css/main.f07ea2fd.css",
-    "static/js/main.fcabbb24.js"
+    "static/css/main.643e00f6.css",
+    "static/js/main.09308631.js"
   ]
 }
