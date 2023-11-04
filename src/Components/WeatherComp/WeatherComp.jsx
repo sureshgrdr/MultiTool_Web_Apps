@@ -51,6 +51,7 @@ function WeatherComp() {
           <input
             type='text'
             placeholder='City Name...'
+            spellcheck='false'
             onChange={(e) => {
               setSrch(e.target.value);
               setVisible("resHide");
@@ -73,15 +74,7 @@ function WeatherComp() {
               return itm.name === image;
             })
             .map((item, i) => {
-              return (
-                <img
-                  src={item.imgpic}
-                  alt={image}
-                  className='mainImg'
-                  key={i}
-                  draggable='false'
-                />
-              );
+              return <img src={item.imgpic} alt={image} className='mainImg' key={i} draggable='false' />;
             })}
 
           <p className='celcInfo '>{temp}°c</p>
